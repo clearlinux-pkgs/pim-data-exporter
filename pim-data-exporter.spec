@@ -6,7 +6,7 @@
 #
 Name     : pim-data-exporter
 Version  : 18.08.0
-Release  : 1
+Release  : 2
 URL      : https://download.kde.org/stable/applications/18.08.0/src/pim-data-exporter-18.08.0.tar.xz
 Source0  : https://download.kde.org/stable/applications/18.08.0/src/pim-data-exporter-18.08.0.tar.xz
 Source99 : https://download.kde.org/stable/applications/18.08.0/src/pim-data-exporter-18.08.0.tar.xz.sig
@@ -104,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535306943
+export SOURCE_DATE_EPOCH=1535435945
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -112,7 +112,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535306943
+export SOURCE_DATE_EPOCH=1535435945
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/pim-data-exporter
 cp COPYING %{buildroot}/usr/share/doc/pim-data-exporter/COPYING
@@ -137,6 +137,8 @@ popd
 /usr/share/config.kcfg/pimsettingexporterglobalconfig.kcfg
 /usr/share/kconf_update/pimsettingexporter-15.08-kickoff.sh
 /usr/share/kconf_update/pimsettingexporter.upd
+/usr/share/xdg/pimsettingexporter.categories
+/usr/share/xdg/pimsettingexporter.renamecategories
 
 %files doc
 %defattr(0644,root,root,0755)
