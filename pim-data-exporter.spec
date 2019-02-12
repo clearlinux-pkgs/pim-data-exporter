@@ -5,27 +5,25 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : pim-data-exporter
-Version  : 18.08.0
-Release  : 2
-URL      : https://download.kde.org/stable/applications/18.08.0/src/pim-data-exporter-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/pim-data-exporter-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/pim-data-exporter-18.08.0.tar.xz.sig
-Summary  : No detailed summary available
+Version  : 18.12.2
+Release  : 3
+URL      : https://download.kde.org/stable/applications/18.12.2/src/pim-data-exporter-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/pim-data-exporter-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/pim-data-exporter-18.12.2.tar.xz.sig
+Summary  : Import and export KDE PIM settings
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0 LGPL-2.1
-Requires: pim-data-exporter-bin
-Requires: pim-data-exporter-lib
-Requires: pim-data-exporter-data
-Requires: pim-data-exporter-license
-Requires: pim-data-exporter-locales
+Requires: pim-data-exporter-bin = %{version}-%{release}
+Requires: pim-data-exporter-data = %{version}-%{release}
+Requires: pim-data-exporter-lib = %{version}-%{release}
+Requires: pim-data-exporter-license = %{version}-%{release}
+Requires: pim-data-exporter-locales = %{version}-%{release}
 BuildRequires : akonadi-contacts-dev
 BuildRequires : akonadi-dev
 BuildRequires : akonadi-mime-dev
-BuildRequires : boost-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : gpgme-dev
-BuildRequires : gpgme-extras
 BuildRequires : kcontacts-dev
 BuildRequires : kidentitymanagement-dev
 BuildRequires : kimap-dev
@@ -33,13 +31,12 @@ BuildRequires : kmailtransport-dev
 BuildRequires : kmime-dev
 BuildRequires : kpimtextedit-dev
 BuildRequires : libassuan-dev
-BuildRequires : libgpg-error-dev
 BuildRequires : libkdepim-dev
 BuildRequires : libkleo-dev
 BuildRequires : mailcommon-dev
 BuildRequires : messagelib-dev
 BuildRequires : pimcommon-dev
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 No detailed description available
@@ -47,8 +44,8 @@ No detailed description available
 %package bin
 Summary: bin components for the pim-data-exporter package.
 Group: Binaries
-Requires: pim-data-exporter-data
-Requires: pim-data-exporter-license
+Requires: pim-data-exporter-data = %{version}-%{release}
+Requires: pim-data-exporter-license = %{version}-%{release}
 
 %description bin
 bin components for the pim-data-exporter package.
@@ -73,8 +70,8 @@ doc components for the pim-data-exporter package.
 %package lib
 Summary: lib components for the pim-data-exporter package.
 Group: Libraries
-Requires: pim-data-exporter-data
-Requires: pim-data-exporter-license
+Requires: pim-data-exporter-data = %{version}-%{release}
+Requires: pim-data-exporter-license = %{version}-%{release}
 
 %description lib
 lib components for the pim-data-exporter package.
@@ -97,27 +94,27 @@ locales components for the pim-data-exporter package.
 
 
 %prep
-%setup -q -n pim-data-exporter-18.08.0
+%setup -q -n pim-data-exporter-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535435945
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549939625
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535435945
+export SOURCE_DATE_EPOCH=1549939625
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/pim-data-exporter
-cp COPYING %{buildroot}/usr/share/doc/pim-data-exporter/COPYING
-cp COPYING.DOC %{buildroot}/usr/share/doc/pim-data-exporter/COPYING.DOC
-cp COPYING.LIB %{buildroot}/usr/share/doc/pim-data-exporter/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/pim-data-exporter
+cp COPYING %{buildroot}/usr/share/package-licenses/pim-data-exporter/COPYING
+cp COPYING.DOC %{buildroot}/usr/share/package-licenses/pim-data-exporter/COPYING.DOC
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/pim-data-exporter/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -137,6 +134,7 @@ popd
 /usr/share/config.kcfg/pimsettingexporterglobalconfig.kcfg
 /usr/share/kconf_update/pimsettingexporter-15.08-kickoff.sh
 /usr/share/kconf_update/pimsettingexporter.upd
+/usr/share/metainfo/org.kde.pimsettingexporter.appdata.xml
 /usr/share/xdg/pimsettingexporter.categories
 /usr/share/xdg/pimsettingexporter.renamecategories
 
@@ -170,13 +168,13 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libpimsettingexporterprivate.so.5
-/usr/lib64/libpimsettingexporterprivate.so.5.9.0
+/usr/lib64/libpimsettingexporterprivate.so.5.10.2
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/pim-data-exporter/COPYING
-/usr/share/doc/pim-data-exporter/COPYING.DOC
-/usr/share/doc/pim-data-exporter/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pim-data-exporter/COPYING
+/usr/share/package-licenses/pim-data-exporter/COPYING.DOC
+/usr/share/package-licenses/pim-data-exporter/COPYING.LIB
 
 %files locales -f pimsettingexporter.lang
 %defattr(-,root,root,-)
