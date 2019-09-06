@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : pim-data-exporter
-Version  : 19.08.0
-Release  : 10
-URL      : https://download.kde.org/stable/applications/19.08.0/src/pim-data-exporter-19.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.0/src/pim-data-exporter-19.08.0.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.0/src/pim-data-exporter-19.08.0.tar.xz.sig
+Version  : 19.08.1
+Release  : 11
+URL      : https://download.kde.org/stable/applications/19.08.1/src/pim-data-exporter-19.08.1.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.08.1/src/pim-data-exporter-19.08.1.tar.xz
+Source1 : https://download.kde.org/stable/applications/19.08.1/src/pim-data-exporter-19.08.1.tar.xz.sig
 Summary  : Import and export KDE PIM settings
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0 LGPL-2.1
@@ -100,14 +100,14 @@ locales components for the pim-data-exporter package.
 
 
 %prep
-%setup -q -n pim-data-exporter-19.08.0
+%setup -q -n pim-data-exporter-19.08.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565940457
+export SOURCE_DATE_EPOCH=1567758095
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -124,7 +124,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565940457
+export SOURCE_DATE_EPOCH=1567758095
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pim-data-exporter
 cp COPYING %{buildroot}/usr/share/package-licenses/pim-data-exporter/COPYING
@@ -162,7 +162,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libpimdataexporterprivate.so.5
-/usr/lib64/libpimdataexporterprivate.so.5.12.0
+/usr/lib64/libpimdataexporterprivate.so.5.12.1
 
 %files license
 %defattr(0644,root,root,0755)
