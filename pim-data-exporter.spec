@@ -6,7 +6,7 @@
 #
 Name     : pim-data-exporter
 Version  : 19.12.0
-Release  : 15
+Release  : 16
 URL      : https://download.kde.org/stable/release-service/19.12.0/src/pim-data-exporter-19.12.0.tar.xz
 Source0  : https://download.kde.org/stable/release-service/19.12.0/src/pim-data-exporter-19.12.0.tar.xz
 Source1  : https://download.kde.org/stable/release-service/19.12.0/src/pim-data-exporter-19.12.0.tar.xz.sig
@@ -27,7 +27,7 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : gpgme-dev
 BuildRequires : gpgme-extras
-BuildRequires : kcalcore-dev
+BuildRequires : kcalendarcore-dev
 BuildRequires : kcontacts-dev
 BuildRequires : kidentitymanagement-dev
 BuildRequires : kimap-dev
@@ -108,10 +108,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576605074
+export SOURCE_DATE_EPOCH=1576626900
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -125,7 +124,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1576605074
+export SOURCE_DATE_EPOCH=1576626900
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pim-data-exporter
 cp %{_builddir}/pim-data-exporter-19.12.0/COPYING %{buildroot}/usr/share/package-licenses/pim-data-exporter/7c203dee3a03037da436df03c4b25b659c073976

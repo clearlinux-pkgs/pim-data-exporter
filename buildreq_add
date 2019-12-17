@@ -1,3 +1,24 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+akonadi-contacts-dev
+akonadi-dev
+akonadi-mime-dev
+akonadi-notes-dev
+boost-dev
+gpgme-dev
+gpgme-extras
+kcalendarcore-dev
+kcontacts-dev
+kidentitymanagement-dev
+kimap-dev
 kimap-staticdev
+kmailtransport-dev
+kmime-dev
+kpimtextedit-dev
+libassuan-dev
+libgpg-error-dev
+libkdepim-dev
+libkleo-dev
+mailcommon-dev
+messagelib-dev
+pimcommon-dev
