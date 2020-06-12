@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : pim-data-exporter
-Version  : 20.04.1
-Release  : 22
-URL      : https://download.kde.org/stable/release-service/20.04.1/src/pim-data-exporter-20.04.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.1/src/pim-data-exporter-20.04.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.1/src/pim-data-exporter-20.04.1.tar.xz.sig
+Version  : 20.04.2
+Release  : 23
+URL      : https://download.kde.org/stable/release-service/20.04.2/src/pim-data-exporter-20.04.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.04.2/src/pim-data-exporter-20.04.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.04.2/src/pim-data-exporter-20.04.2.tar.xz.sig
 Summary  : Import and export KDE PIM settings
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0 LGPL-2.1
@@ -113,15 +113,15 @@ locales components for the pim-data-exporter package.
 
 
 %prep
-%setup -q -n pim-data-exporter-20.04.1
-cd %{_builddir}/pim-data-exporter-20.04.1
+%setup -q -n pim-data-exporter-20.04.2
+cd %{_builddir}/pim-data-exporter-20.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589947677
+export SOURCE_DATE_EPOCH=1591970222
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -137,12 +137,12 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1589947677
+export SOURCE_DATE_EPOCH=1591970222
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pim-data-exporter
-cp %{_builddir}/pim-data-exporter-20.04.1/COPYING %{buildroot}/usr/share/package-licenses/pim-data-exporter/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/pim-data-exporter-20.04.1/COPYING.DOC %{buildroot}/usr/share/package-licenses/pim-data-exporter/1bd373e4851a93027ba70064bd7dbdc6827147e1
-cp %{_builddir}/pim-data-exporter-20.04.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/pim-data-exporter/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/pim-data-exporter-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/pim-data-exporter/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/pim-data-exporter-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/pim-data-exporter/1bd373e4851a93027ba70064bd7dbdc6827147e1
+cp %{_builddir}/pim-data-exporter-20.04.2/COPYING.LIB %{buildroot}/usr/share/package-licenses/pim-data-exporter/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -168,14 +168,35 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
+/usr/share/doc/HTML/ca/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/ca/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/ca/pimsettingexporter/selection-dialog.png
+/usr/share/doc/HTML/de/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/de/pimsettingexporter/index.docbook
 /usr/share/doc/HTML/en/pimdataexporter/index.cache.bz2
 /usr/share/doc/HTML/en/pimdataexporter/index.docbook
 /usr/share/doc/HTML/en/pimdataexporter/selection-dialog.png
+/usr/share/doc/HTML/es/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/es/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/et/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/et/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/it/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/it/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/nl/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/nl/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/pt/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/pt/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/pt_BR/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/pt_BR/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/sv/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/sv/pimsettingexporter/index.docbook
+/usr/share/doc/HTML/uk/pimsettingexporter/index.cache.bz2
+/usr/share/doc/HTML/uk/pimsettingexporter/index.docbook
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libpimdataexporterprivate.so.5
-/usr/lib64/libpimdataexporterprivate.so.5.14.1
+/usr/lib64/libpimdataexporterprivate.so.5.14.2
 
 %files license
 %defattr(0644,root,root,0755)
