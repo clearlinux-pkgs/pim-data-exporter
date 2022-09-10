@@ -7,6 +7,8 @@ akonadi-notes-dev
 boost-dev
 gpgme-dev
 gpgme-extras
+grantlee-dev
+grantleetheme-dev
 kcalendarcore-dev
 kcontacts-dev
 kidentitymanagement-dev
@@ -22,3 +24,4 @@ libkleo-dev
 mailcommon-dev
 messagelib-dev
 pimcommon-dev
+qtwebengine-dev
