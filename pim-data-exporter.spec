@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : pim-data-exporter
-Version  : 23.08.0
-Release  : 58
-URL      : https://download.kde.org/stable/release-service/23.08.0/src/pim-data-exporter-23.08.0.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.08.0/src/pim-data-exporter-23.08.0.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.08.0/src/pim-data-exporter-23.08.0.tar.xz.sig
+Version  : 23.08.1
+Release  : 59
+URL      : https://download.kde.org/stable/release-service/23.08.1/src/pim-data-exporter-23.08.1.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.1/src/pim-data-exporter-23.08.1.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.1/src/pim-data-exporter-23.08.1.tar.xz.sig
 Summary  : Import and export KDE PIM settings
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 GFDL-1.2 GPL-2.0 LGPL-2.0
@@ -108,15 +108,15 @@ locales components for the pim-data-exporter package.
 
 
 %prep
-%setup -q -n pim-data-exporter-23.08.0
-cd %{_builddir}/pim-data-exporter-23.08.0
+%setup -q -n pim-data-exporter-23.08.1
+cd %{_builddir}/pim-data-exporter-23.08.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1693241136
+export SOURCE_DATE_EPOCH=1695137550
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -149,7 +149,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1693241136
+export SOURCE_DATE_EPOCH=1695137550
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pim-data-exporter
 cp %{_builddir}/pim-data-exporter-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/pim-data-exporter/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
@@ -217,9 +217,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libpimdataexporterprivate.so.5.24.0
+/V3/usr/lib64/libpimdataexporterprivate.so.5.24.1
 /usr/lib64/libpimdataexporterprivate.so.5
-/usr/lib64/libpimdataexporterprivate.so.5.24.0
+/usr/lib64/libpimdataexporterprivate.so.5.24.1
 
 %files license
 %defattr(0644,root,root,0755)
